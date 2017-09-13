@@ -1,12 +1,12 @@
 {
   "name": "hostmaker",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "host",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "pack":"build --dir",
-    "dist":"electron-builder",
+    "pack": "build --dir",
+    "dist": "electron-builder",
     "release": "build"
   },
   "repository": {
@@ -20,8 +20,7 @@
   },
   "homepage": "https://github.com/Sanwuthree/hostmaker#readme",
   "devDependencies": {
-    "electron": "^1.7.6",
-    "electron-builder": "^19.27.7"
+    "electron": "^1.7.6"
   },
   "build": {
     "appId": "electron.lantusupei.com",
@@ -33,7 +32,19 @@
     "win": {
       "target": "nsis",
       "requestedExecutionLevel": "requireAdministrator",
-      "icon": "build/icon.ico"
+      "icon": "build/icon.ico",
+      "publisherName":"HostMaker"
+    },
+    "nsis":{
+      "oneClick":false,
+      "perMachine":true,
+      "allowToChangeInstallationDirectory":true,
+      "artifactName":"HostMaker.exe",
+      "allowElevation":true
+    },
+    "publish": {
+      "provider": "generic",
+      "url": "http://127.0.0.1:3000"
     }
   }
 }
