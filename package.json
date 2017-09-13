@@ -1,0 +1,39 @@
+{
+  "name": "hostmaker",
+  "version": "1.0.0",
+  "description": "host",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "pack":"build --dir",
+    "dist":"electron-builder",
+    "release": "build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sanwuthree/hostmaker.git"
+  },
+  "author": "sanwuthree",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Sanwuthree/hostmaker/issues"
+  },
+  "homepage": "https://github.com/Sanwuthree/hostmaker#readme",
+  "devDependencies": {
+    "electron": "^1.7.6",
+    "electron-builder": "^19.27.7"
+  },
+  "build": {
+    "appId": "electron.lantusupei.com",
+    "asar": true,
+    "files": [
+      "!*.md",
+      "!.vscode"
+    ],
+    "win": {
+      "target": "nsis",
+      "requestedExecutionLevel": "requireAdministrator",
+      "icon": "build/icon.ico"
+    }
+  }
+}
